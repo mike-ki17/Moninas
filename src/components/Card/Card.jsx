@@ -1,0 +1,40 @@
+import "./Card.css";
+
+import { Link } from "react-router-dom";
+import { useProductContext } from "../../context/productContext.jsx";
+import Button from "../Button/Button.jsx";
+
+function Card() {
+  const { OriginProducts } = useProductContext();
+
+  return (
+    <div className="container-card ">
+      <div className="content-card col-5 med-col-3 peq-col-1">
+        {OriginProducts.map((m, index) => (
+          <div className="card" key={m.id}>
+            <div className="product-item">
+              <Link to={`/product/${index}`} className="link_">
+                <div className="product">
+                  <img
+                    src={`./src/img/${m.img}`}
+                    alt=""
+                    className="img-product"
+                  />
+                </div>
+                <div className="product-detail">
+                  <div className="product-info">
+                    <p className="card-price">{`$ ${m.price}`}</p>
+                    <p className="card-name">{m.name.toUpperCase()}</p>
+                  </div>
+                </div>
+              </Link>
+              <Button elem={m} id={index} style={'container-btn-counter'} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Card;

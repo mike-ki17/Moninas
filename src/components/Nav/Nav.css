@@ -1,0 +1,124 @@
+.container-nav{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 90%;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+    padding: 15px;
+}
+li{
+    padding: 15px;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: var(--colorPrimary);
+}
+
+.logo{
+    max-width: 170px;
+}
+
+.log-in{
+    text-decoration: none;
+    color: var(--colorPrimary);
+    padding: 15px 25px 15px 25px;
+    border-radius: 30px;
+}
+
+.log-in:hover{
+    color: var(--colorPrimary);
+}
+
+.sing-up{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 25px 15px 25px;
+    border-radius: 30px;
+    background-color: var(--colorPrimary);
+}
+
+.initial{
+    padding-left: 40px;
+}
+
+.container-btn-car{
+    border: none;
+   
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    position: relative;
+}
+.btn-car{
+    color: var(--colorPrimary);
+    font-size: 35px;
+}
+.counter-car{
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 17px;
+    height: 17px;
+    background-color: var(--coloreTerciaryo);
+    border-radius: 50%;
+    font-size: 13px;
+    color: #fff;
+}
+
+.not-counter-car{
+    display: none;
+}
+
+.photo-user{
+    border-radius: 50%;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.nav-funcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-session{
+    display: none;
+}
+
+.nav-movile{
+    display: none;
+}
+
+.btn-menu{
+    font-size: 33px;
+    color: var(--colorPrimary);
+    cursor: pointer;
+}
+
+
+@media (max-width: 1092px) {
+    .nav-principal{
+        display: none;
+    }
+    .nav-movile{
+        display: flex;
+    }
+}
