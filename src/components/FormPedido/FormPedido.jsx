@@ -3,19 +3,27 @@ import React from "react";
 import { useProductContext } from "../../context/productContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
-
+import { useForm } from "@formspree/react";
+import { BiCheckCircle } from "react-icons/bi";
+import { useState } from "react";
 
 import "./FormPedido.css";
 
-
-
 function FormPedido() {
-
- 
-  const { listProduct, subTotal } = useProductContext();
+  const [state, handleSubmit, reset] = useForm("mjvnnqov");
+  const { listProduct, subTotal, deleteProduct } = useProductContext();
   const navigation = useNavigate();
 
+  const [check, setCheck] = useState(false)
+
+  if (state.succeeded) {
+    console.log("ENviado Yeah");  
+  }
+
+  const returnInit = function () {
+    window.location.reload()
+    navigation('/dash')    
+  }
 
   useEffect(() => {
     if (listProduct.length == 0) {
@@ -23,8 +31,24 @@ function FormPedido() {
     }
   }, [navigation]);
 
+  const activeCheck = function () {
+    setCheck(true)
+  }
+
   return (
     <>
+      <div className={check ? "container-WindowCheck" : 'container-WindowCheck-false'}>
+        <div className="windowCheck">
+          <div className="infoForm">
+            <BiCheckCircle className="check" />
+            <p>
+              Tus datos han sido enviados correctamente, muy pronto nos
+              pondremos en contacto contigo
+            </p>
+            <button onClick={returnInit}>Volver al inicio</button>
+          </div>
+        </div>
+      </div>
       <div className="containerForm">
         <div className="contentForm">
           <div className="info-buy">
@@ -32,7 +56,7 @@ function FormPedido() {
               Ten en cuenta que los pedidos solo se realizan los fines de semana
             </p>
           </div>
-          <form  className="formP">
+          <form onSubmit={handleSubmit} className="formP">
             <input
               type="text"
               placeholder="Nombre Completo"
@@ -67,7 +91,13 @@ function FormPedido() {
               required
             ></textarea>
 
-            <input type="submit" className="btn-submit-buy" value={'Realizar pedido'}/>
+            <input
+              type="submit"
+              className="btn-submit-buy"
+              value={"Realizar pedido"}
+              disabled={state.submitting}
+              onClick={activeCheck}
+            />
           </form>
         </div>
         <div className="verify-pedido">
