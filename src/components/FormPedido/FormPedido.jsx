@@ -19,9 +19,9 @@ function FormPedido() {
   const [check, setCheck] = useState(false);
   const [errors, setErrors] = useState({});
 
-  if (state.succeeded) {
-    console.log("ENviado Yeah");
-  }
+  // if (state.succeeded) {
+  //   console.log("ENviado Yeah");
+  // }
   if (subTotal == 0){
     window.location.reload();
     navigation("/dash");
@@ -43,11 +43,9 @@ function FormPedido() {
   };
 
   const handleButtonClick = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (validateForm()) {
-      handleSubmit(event).then(() => {
-        activeCheck();
-      });
+      activeCheck()
     }
   };
 
@@ -106,7 +104,7 @@ function FormPedido() {
             <input
               type="email"
               placeholder="Correo electronico"
-              className="inputP"
+              className="inputP oculto"
               name="correo"
               id="correo"
               defaultValue={user.email}
@@ -142,6 +140,13 @@ function FormPedido() {
             {errors.descripcion && (
               <p className="error-form-pedido">{errors.descripcion}</p>
             )}
+             <textarea
+              name="pedido"
+              id="pedido"
+              className="inputP oculto"
+              defaultValue={JSON.stringify(listProduct, null, 2)}
+              required
+            ></textarea>
             <input
               type="submit"
               className="btn-submit-buy"
