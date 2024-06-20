@@ -27,6 +27,7 @@ function Car() {
   };
 
   const makePedido = () => {
+    handleCar()
     navigation("/Pedido")
   }
 

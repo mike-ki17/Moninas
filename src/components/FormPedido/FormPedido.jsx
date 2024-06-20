@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useForm } from "@formspree/react";
 import { BiCheckCircle } from "react-icons/bi";
 import { useState } from "react";
+import { useAuth } from "../../context/authContext";
 
 import "./FormPedido.css";
 
@@ -13,17 +14,23 @@ function FormPedido() {
   const [state, handleSubmit, reset] = useForm("mjvnnqov");
   const { listProduct, subTotal, deleteProduct } = useProductContext();
   const navigation = useNavigate();
+  const { user } = useAuth();
 
-  const [check, setCheck] = useState(false)
+  const [check, setCheck] = useState(false);
+  const [errors, setErrors] = useState({});
 
   if (state.succeeded) {
-    console.log("ENviado Yeah");  
+    console.log("ENviado Yeah");
+  }
+  if (subTotal == 0){
+    window.location.reload();
+    navigation("/dash");
   }
 
   const returnInit = function () {
-    window.location.reload()
-    navigation('/dash')    
-  }
+    window.location.reload();
+    navigation("/dash");
+  };
 
   useEffect(() => {
     if (listProduct.length == 0) {
@@ -32,12 +39,42 @@ function FormPedido() {
   }, [navigation]);
 
   const activeCheck = function () {
-    setCheck(true)
-  }
+    setCheck(true);
+  };
+
+  const handleButtonClick = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      handleSubmit(event).then(() => {
+        activeCheck();
+      });
+    }
+  };
+
+  const validateForm = () => {
+    let formErrors = {};
+    const nombre = document.getElementById("nombre").value;
+    const telefono = document.getElementById("telefono").value;
+    const direccion = document.getElementById("direccion").value;
+    const descripcion = document.getElementById("descripcion").value;
+
+    if (!nombre) formErrors.nombre = "El nombre es requerido";
+    if (!telefono) formErrors.telefono = "El teléfono es requerido";
+    if (!direccion) formErrors.direccion = "La dirección es requerida";
+    if (!descripcion) formErrors.descripcion = "La descripción es requerida";
+
+    setErrors(formErrors);
+
+    return Object.keys(formErrors).length === 0;
+  };
 
   return (
     <>
-      <div className={check ? "container-WindowCheck" : 'container-WindowCheck-false'}>
+      <div
+        className={
+          check ? "container-WindowCheck" : "container-WindowCheck-false"
+        }
+      >
         <div className="windowCheck">
           <div className="infoForm">
             <BiCheckCircle className="check" />
@@ -65,6 +102,16 @@ function FormPedido() {
               id="nombre"
               required
             />
+            {errors.nombre && <p className="error-form-pedido">{errors.nombre}</p>}
+            <input
+              type="email"
+              placeholder="Correo electronico"
+              className="inputP"
+              name="correo"
+              id="correo"
+              defaultValue={user.email}
+              required
+            />
             <input
               type="text"
               placeholder="Número de telefono"
@@ -73,8 +120,8 @@ function FormPedido() {
               id="telefono"
               required
             />
-            {/* <p>Selecciona un día abil, minimo 3 dias para realizar el pedido</p>
-            <input type="date" className="inputP" /> */}
+           
+            {errors.telefono && <p className="error-form-pedido">{errors.telefono}</p>}
             <input
               type="text"
               placeholder="Dirección de residencia"
@@ -83,6 +130,8 @@ function FormPedido() {
               id="direccion"
               required
             />
+
+            {errors.direccion && <p className="error-form-pedido">{errors.direccion}</p>}
             <textarea
               name="descripcion"
               id="descripcion"
@@ -90,13 +139,15 @@ function FormPedido() {
               className="inputP"
               required
             ></textarea>
-
+            {errors.descripcion && (
+              <p className="error-form-pedido">{errors.descripcion}</p>
+            )}
             <input
               type="submit"
               className="btn-submit-buy"
               value={"Realizar pedido"}
               disabled={state.submitting}
-              onClick={activeCheck}
+              onClick={handleButtonClick}
             />
           </form>
         </div>
@@ -104,7 +155,6 @@ function FormPedido() {
           <h5 className="subtitle-pedido">Pedido</h5>
           <div className="producto-buy">
             {listProduct.map((item, index) => (
-              // <h1 key={index}>{item.amount}</h1>
               <div className="card-shop" key={index}>
                 <img src={`./src/img/${item.img}`} />
                 <div className="item-data-shop">
