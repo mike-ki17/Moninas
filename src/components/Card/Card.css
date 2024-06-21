@@ -206,3 +206,16 @@
 .img-product{
     max-width: 170px;
 }
+
+/* .product-item{
+    position: relative;
+} */
+
+.unit-info{
+   background-color: var(--coloreTerciaryo);
+   padding: 15px 10px;
+    border-radius: 5px ;
+    color: #f2f2f2;
+    font-size: 15px;
+
+}

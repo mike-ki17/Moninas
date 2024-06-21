@@ -5,6 +5,9 @@ import { useProductContext } from "../../context/productContext.jsx";
 import Button from "../Button/Button.jsx";
 
 function Card() {
+  const formatNumber = (num) => {
+    return Number(num).toLocaleString("es-ES");
+  };
   const { OriginProducts } = useProductContext();
 
   return (
@@ -13,6 +16,7 @@ function Card() {
         {OriginProducts.map((m, index) => (
           <div className="card" key={m.id}>
             <div className="product-item">
+              <span className="unit-info">X10 unit</span>
               <Link to={`/product/${index}`} className="link_">
                 <div className="product">
                   <img
@@ -23,12 +27,12 @@ function Card() {
                 </div>
                 <div className="product-detail">
                   <div className="product-info">
-                    <p className="card-price">{`$ ${m.price}`}</p>
+                    <p className="card-price">{`$ ${formatNumber(m.price)}`}</p>
                     <p className="card-name">{m.name.toUpperCase()}</p>
                   </div>
                 </div>
               </Link>
-              <Button elem={m} id={index} style={'container-btn-counter'} />
+              <Button elem={m} id={index} style={"container-btn-counter"} />
             </div>
           </div>
         ))}

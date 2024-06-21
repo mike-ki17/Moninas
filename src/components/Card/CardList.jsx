@@ -1,16 +1,56 @@
 export const products = [
     {
         id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.999,
-        img: 'lasagna.png',
-        amount: 2,
+        name: 'empanadas de carne',
+        price: 25000,
+        img: 'empanada.png',
+        amount: 1,
         show: false
     },
     {
         id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.999,
+        name: 'empanadas de pollo',
+        price: 25000,
+        img: 'lasagna.png',
+        amount: 1,
+        show: false
+    },
+    {
+        id: crypto.randomUUID(),
+        name: 'empanadas de platano',
+        price: 25000,
+        img: 'lasagna.png',
+        amount: 1,
+        show: false
+    },
+    {
+        id: crypto.randomUUID(),
+        name: 'empanadas de champiñones',
+        price: 25000,
+        img: 'lasagna.png',
+        amount: 1,
+        show: false
+    },
+    {
+        id: crypto.randomUUID(),
+        name: 'empanadas de arroz',
+        price: 25000,
+        img: 'lasagna.png',
+        amount: 1,
+        show: false
+    },
+    {
+        id: crypto.randomUUID(),
+        name: 'empanadas de espinaca',
+        price: 25000,
+        img: 'lasagna.png',
+        amount: 1,
+        show: false
+    },
+    {
+        id: crypto.randomUUID(),
+        name: 'empanadas hawaianas',
+        price: 25000,
         img: 'lasagna.png',
         amount: 1,
         show: false
@@ -18,7 +58,7 @@ export const products = [
     {
         id: crypto.randomUUID(),
         name: 'lasagna',
-        price: 59.999,
+        price: 59900,
         img: 'lasagna.png',
         amount: 1,
         show: false
@@ -26,7 +66,7 @@ export const products = [
     {
         id: crypto.randomUUID(),
         name: 'lasagna',
-        price: 59.999,
+        price: 59900,
         img: 'lasagna.png',
         amount: 1,
         show: false
@@ -34,47 +74,7 @@ export const products = [
     {
         id: crypto.randomUUID(),
         name: 'lasagna',
-        price: 59.999,
-        img: 'lasagna.png',
-        amount: 1,
-        show: false
-    },
-    {
-        id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.999,
-        img: 'lasagna.png',
-        amount: 1,
-        show: false
-    },
-    {
-        id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.900,
-        img: 'lasagna.png',
-        amount: 1,
-        show: false
-    },
-    {
-        id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.900,
-        img: 'lasagna.png',
-        amount: 1,
-        show: false
-    },
-    {
-        id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.900,
-        img: 'lasagna.png',
-        amount: 1,
-        show: false
-    },
-    {
-        id: crypto.randomUUID(),
-        name: 'lasagna',
-        price: 59.900,
+        price: 59900,
         img: 'lasagna.png',
         amount: 1,
         show: false

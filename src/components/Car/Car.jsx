@@ -30,6 +30,9 @@ function Car() {
     handleCar()
     navigation("/Pedido")
   }
+  const formatNumber = (num) => {
+    return Number(num).toLocaleString('es-ES');
+  };
 
   return (
     <>
@@ -68,7 +71,7 @@ function Car() {
                     </div>
                     <div className="item-data">
                       <p className="item-name">{m.name.toUpperCase()}</p>
-                      <p className="item-price">$ {m.price * m.amount}</p>
+                      <p className="item-price">$ {formatNumber(m.price * m.amount)}</p>
                     </div>
                     <CounterProducts
                       price={m.price}
@@ -81,7 +84,7 @@ function Car() {
               </div>
             )}
             <div className="container-subtotal">
-              <p>Subtotal: $ {parseFloat(subTotal.toFixed(3))}</p>
+              <p>Subtotal: $ {formatNumber(parseFloat(subTotal.toFixed(3)))}</p>
               <button onClick={makePedido}>Hacer pedido</button>
             </div>
           </div>
