@@ -22,12 +22,13 @@ function FormPedido() {
   // if (state.succeeded) {
   //   console.log("ENviado Yeah");
   // }
-  if (subTotal == 0){
+  if (subTotal == 0) {
     window.location.reload();
     navigation("/dash");
   }
 
   const returnInit = function () {
+
     window.location.reload();
     navigation("/dash");
   };
@@ -45,7 +46,7 @@ function FormPedido() {
   const handleButtonClick = (event) => {
     // event.preventDefault();
     if (validateForm()) {
-      activeCheck()
+      activeCheck();
     }
   };
 
@@ -66,6 +67,9 @@ function FormPedido() {
     return Object.keys(formErrors).length === 0;
   };
 
+  const formatNumber = (num) => {
+    return Number(num).toLocaleString("es-ES");
+  };
   return (
     <>
       <div
@@ -100,7 +104,9 @@ function FormPedido() {
               id="nombre"
               required
             />
-            {errors.nombre && <p className="error-form-pedido">{errors.nombre}</p>}
+            {errors.nombre && (
+              <p className="error-form-pedido">{errors.nombre}</p>
+            )}
             <input
               type="email"
               placeholder="Correo electronico"
@@ -118,8 +124,10 @@ function FormPedido() {
               id="telefono"
               required
             />
-           
-            {errors.telefono && <p className="error-form-pedido">{errors.telefono}</p>}
+
+            {errors.telefono && (
+              <p className="error-form-pedido">{errors.telefono}</p>
+            )}
             <input
               type="text"
               placeholder="Dirección de residencia"
@@ -129,7 +137,9 @@ function FormPedido() {
               required
             />
 
-            {errors.direccion && <p className="error-form-pedido">{errors.direccion}</p>}
+            {errors.direccion && (
+              <p className="error-form-pedido">{errors.direccion}</p>
+            )}
             <textarea
               name="descripcion"
               id="descripcion"
@@ -140,7 +150,7 @@ function FormPedido() {
             {errors.descripcion && (
               <p className="error-form-pedido">{errors.descripcion}</p>
             )}
-             <textarea
+            <textarea
               name="pedido"
               id="pedido"
               className="inputP oculto"
@@ -165,14 +175,14 @@ function FormPedido() {
                 <div className="item-data-shop">
                   <p className="item-name-shop">{item.name.toUpperCase()}</p>
                   <p className="item-price-shop">
-                    $ {item.price * item.amount}
+                    $ {formatNumber(item.price * item.amount)}
                   </p>
                 </div>
               </div>
             ))}
           </div>
           <div className="total-buy">
-            <p>Total: ${subTotal} COP</p>
+            <p>Total: ${formatNumber(subTotal)} COP</p>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ function Card() {
         {OriginProducts.map((m, index) => (
           <div className="card" key={m.id}>
             <div className="product-item">
-              <span className="unit-info">X10 unit</span>
+              <span className="unit-info">X5 unit</span>
               <Link to={`/product/${index}`} className="link_">
                 <div className="product">
                   <img
