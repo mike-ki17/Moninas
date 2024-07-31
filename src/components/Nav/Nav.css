@@ -11,9 +11,12 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-    padding: 15px;
 }
 li{
+    padding: 15px;
+}
+
+.nav-principal{
     padding: 15px;
 }
 
@@ -91,6 +94,7 @@ li{
     border-radius: 50%;
     width: 40px;
     margin-left: 10px;
+    cursor: pointer
 }
 
 .nav-funcion{
@@ -107,11 +111,66 @@ li{
     display: none;
 }
 
+
 .btn-menu{
     font-size: 33px;
     color: var(--colorPrimary);
     cursor: pointer;
+    margin: 15px;
 }
+
+.display_menu{
+    width: 100%;
+    position: fixed;
+    top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--colorPrimary); */
+    background-color: #fff;
+    /* flex-direction: column; */
+    
+}
+
+
+
+
+.nav-list-movil{
+    list-style: none;
+    /* display: flex; */
+    /* justify-content: right; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    text-align: right;
+    /* margin-left: 25px; */
+    
+}
+.nav-list-movil > li{
+    /* width: 100%; */
+    cursor: pointer;
+    padding: 15px;
+}
+
+/* .nav-list-movil > li:hover{
+    background-color: #6443436b;
+} */
+.link-movil{
+    text-decoration: none;
+    color: var(--colorPrimary);
+    /* color:#fff; */
+}
+
+.ocult_menu{
+    display: none;
+}
+
+.nav-funcion-menuMovile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 
 @media (max-width: 1092px) {
@@ -120,5 +179,11 @@ li{
     }
     .nav-movile{
         display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo{
+        max-width: 140px;
     }
 }
