@@ -6,7 +6,8 @@ import { useCarContext } from "../../context/showCar";
 import { useProductContext } from "../../context/productContext.jsx";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./Nav.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 function Nav({ photo, logOut, name, display }) {
   const { showCar, handleCar } = useCarContext();
   const { listProduct } = useProductContext();
@@ -15,6 +16,17 @@ function Nav({ photo, logOut, name, display }) {
   const handleMenu = () => {
     showMenuMovil ? setShowMenuMovil(false) : setShowMenuMovil(true);
   };
+
+  const handleScroll = () => {
+    setShowMenuMovil(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="container-nav">
@@ -66,25 +78,24 @@ function Nav({ photo, logOut, name, display }) {
         </div>
         <div className="functions">
           <ul className="nav-funcion-menuMovile">
-          <NavLink to="/login" className={display ? "log-in" : "user-session"}>
-            Log in
-          </NavLink>
-          <NavLink
-            to="/register"
-            className={display ? "sing-up" : "user-session"}
-          >
-            Sing up
-          </NavLink>
-          
-          <NavLink
-            to="/login"
-            className={display ? "user-session" : "sing-up"}
-            onClick={logOut}
-          >
-            log out
-          </NavLink>
-          
-        </ul>
+            <NavLink to="/login" className={display ? "log-in" : "user-session"}>
+              Log in
+            </NavLink>
+            <NavLink
+              to="/register"
+              className={display ? "sing-up" : "user-session"}
+            >
+              Sing up
+            </NavLink>
+
+            <NavLink
+              to="/login"
+              className={display ? "user-session" : "sing-up"}
+              onClick={logOut}
+            >
+              log out
+            </NavLink>
+          </ul>
         </div>
       </div>
       <nav className="nav-principal">
