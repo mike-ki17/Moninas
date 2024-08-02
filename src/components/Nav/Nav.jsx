@@ -64,7 +64,7 @@ function Nav({ photo, logOut, name, display }) {
                 Inicio
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/productos" className="link-movil">
                 Productos
               </NavLink>
@@ -73,7 +73,7 @@ function Nav({ photo, logOut, name, display }) {
               <NavLink to="/contacto" className="link-movil">
                 Contacto
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="functions">
@@ -106,7 +106,7 @@ function Nav({ photo, logOut, name, display }) {
               Inicio
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/productos" className="link">
               Productos
             </NavLink>
@@ -115,7 +115,7 @@ function Nav({ photo, logOut, name, display }) {
             <NavLink to="/contacto" className="link">
               Contacto
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <ul className="nav-funcion">
           <NavLink to="/login" className={display ? "log-in" : "user-session"}>

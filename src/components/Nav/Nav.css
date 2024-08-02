@@ -121,16 +121,21 @@ li{
 
 .display_menu{
     /* width: 30%; */
-    padding: 30px;
+    padding: 40px;
     position: fixed;
+    z-index: 100;
     top: 80px;
     right: 0;
     display: flex;
     /* justify-content: right;
     align-items: center; */
     /* background-color: var(--colorPrimary); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #fff;
     flex-direction: column;
+    height: 50vh;
     
 }
 

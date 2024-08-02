@@ -30,8 +30,8 @@ function Register() {
         navigate("/");
       }
     } catch (error) {
-      setError('Problemas al enviar formulario')
-      console.log(error)
+      setError("Problemas al enviar formulario");
+      console.log(error);
     }
   };
 
@@ -70,6 +70,9 @@ function Register() {
 
           <p className="info-sing-up">
             Ya tienes cuenta? <Link to="/login">Sing in</Link>
+          </p>
+          <p className="info-sing-up">
+            <Link to="/">Volver al incio</Link>
           </p>
         </form>
       </div>

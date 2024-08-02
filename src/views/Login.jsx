@@ -7,6 +7,7 @@ import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { db } from "../app/firebase.jsx";
 import { getDocs, collection } from "firebase/firestore";
+
 function Login() {
   
 
@@ -92,6 +93,9 @@ function Login() {
 
             <p className="info-sing-up">
               Don't have accont? <Link to="/register">Sing up</Link>
+            </p>
+            <p className="info-sing-up">
+              <Link to="/">Volver al incio</Link>
             </p>
           </form>
         </div>
