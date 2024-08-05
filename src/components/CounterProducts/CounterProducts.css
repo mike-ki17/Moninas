@@ -39,3 +39,19 @@
     padding: 5px;
     width: 100%;
   }
+
+
+  @media (max-width: 630px) {
+    .count-container-item {
+      margin: 20px;
+     }
+  }
+
+  @media (max-width: 400px) {
+    .count-items {
+      padding: 0;
+    }
+    .count-container-item {
+     margin: 20px;
+    }
+  }

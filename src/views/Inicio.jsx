@@ -39,7 +39,7 @@ function Inicio() {
      
       <div className="subtitle-container">
         <div className="subtite-content">
-          <h4>Promociones</h4>
+          {/* <h4>Promociones</h4> */}
         </div>
       </div>
       <Card />

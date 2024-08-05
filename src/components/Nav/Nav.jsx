@@ -37,6 +37,11 @@ function Nav({ photo, logOut, name, display }) {
           </li>
         </ul>
         <ul className="nav-funcion">
+          <img
+            src={photo}
+            alt=""
+            className={display ? "user-session" : "photo-user"}
+          />
           <button className="container-btn-car" onClick={handleCar}>
             <BiCartAlt className="btn-car" />
             <span
@@ -48,11 +53,6 @@ function Nav({ photo, logOut, name, display }) {
             </span>
           </button>
           <BiMenuAltRight className="btn-menu" onClick={handleMenu} />
-          <img
-            src={photo}
-            alt=""
-            className={display ? "user-session" : "photo-user"}
-          />
         </ul>
       </nav>
 
@@ -78,7 +78,10 @@ function Nav({ photo, logOut, name, display }) {
         </div>
         <div className="functions">
           <ul className="nav-funcion-menuMovile">
-            <NavLink to="/login" className={display ? "log-in" : "user-session"}>
+            <NavLink
+              to="/login"
+              className={display ? "log-in" : "user-session"}
+            >
               Log in
             </NavLink>
             <NavLink
@@ -100,13 +103,15 @@ function Nav({ photo, logOut, name, display }) {
       </div>
       <nav className="nav-principal">
         <ul className="nav-list">
-          <img src={Logo} alt="Moninas" className="logo" />
-          <li className="initial">
+          <NavLink to="/" className="link">
+            <img src={Logo} alt="Moninas" className="logo" />
+          </NavLink>
+          {/* <li className="initial">
             <NavLink to="/" className="link">
               Inicio
             </NavLink>
           </li>
-          {/* <li>
+          <li>
             <NavLink to="/productos" className="link">
               Productos
             </NavLink>

@@ -44,7 +44,7 @@
 
 .content-compras-listProducts {
   margin: 20px;
-  height: 65%;
+  height: 55%;
   overflow: auto;
   padding: 30px 10px 30px 10px;
 }
@@ -154,3 +154,19 @@ input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+@media (max-width: 630px) {
+  .item-buy {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  .item-img {
+    width: 90px;
+  }
+}
+
