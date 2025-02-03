@@ -7,7 +7,7 @@ from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 from flask_jwt_extended import create_access_token
 import os
 import bcrypt
-from auth import auth_bp
+# from auth import auth_bp
 import datetime
 
 
@@ -62,7 +62,7 @@ def login():
         return jsonify({"mensaje": ex}), 500
 
 
-app.register_blueprint(auth_bp, url_prefix="/auth")
+# app.register_blueprint(auth_bp, url_prefix="/auth")
 
 
 @app.route('/pedidos', methods=['GET'])
