@@ -1,0 +1,32 @@
+.container-btn-car {
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  position: relative;
+}
+
+.btn-car {
+  color: var(--colorPrimary);
+  font-size: 35px;
+}
+
+.not-counter-car {
+  display: none;
+}
+
+.counter-car {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 17px;
+  height: 17px;
+  background-color: var(--coloreTerciaryo);
+  border-radius: 50%;
+  font-size: 13px;
+  color: #fff;
+}

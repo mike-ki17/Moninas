@@ -1,0 +1,109 @@
+.container-form-contact{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* flex-direction: column; */
+    width: 100vw;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    /* height: 90vh; */
+}
+
+
+.btn-whatsapp{
+    background-color: #25D366;
+    color: #fff;
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 30%;
+}
+
+
+.container-contact-whatsapp{
+    width: 90%;
+    margin-top: 10px;
+    background-color: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.container-contact-whatsapp a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container-contact-whatsapp p {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.contactoFormCheck{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content-check{
+    width:70%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-check p{
+    color: var(--colorPrimary);
+    font-size: 30px;
+    text-align: center;
+}
+
+.content-check button {
+    padding: 10px 20px;
+    margin: 30px;
+    outline: none;
+    background: var(--colorPrimary);
+    color: #f2f2f2;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.content-check button:hover{
+    background-color: rgba(153, 25, 25, 0.562);
+}
+
+
+.content-contact{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.label-form-contact{
+    font-size: 25px;
+    color: var(--colorPrimary)
+}
+
+
+@media (max-width: 700px){
+    .content-contact{
+        width: 80%;
+    }
+}
+
+@media (max-width: 468px){
+    .content-contact{
+        width: 100%;
+    }
+}

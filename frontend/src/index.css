@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: 'Preahvihear', sans-serif; */
+
+}
+
+:root{
+  --colorPrimary: #591E10;
+  --coloreSecundary: #ECD08C;
+  --coloreTerciaryo: #DF1415;
+  --color-product-price: rgba(255, 0, 0, 0.966);
+  --tipography-size: 18px;
+}

@@ -1,0 +1,15 @@
+
+# Bakend 
+
+Api/venv/
+Api/.env
+
+Api/__pycache__/
+
+
+# Frontend
+
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/node_modules/
